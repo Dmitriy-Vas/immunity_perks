@@ -1,0 +1,1 @@
+ModLuaFileAppend( "data/scripts/perks/perk_list.lua", "mods/immunity_perks/files/scripts/perk_list.lua" )
