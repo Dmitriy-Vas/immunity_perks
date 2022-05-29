@@ -1,4 +1,5 @@
 -- Acid immunity
+if ModSettingGet("immunity_perks.protection_acid") then
 table.insert(perk_list,
     {
         id = "PROTECTION_ACID",
@@ -22,8 +23,10 @@ table.insert(perk_list,
         end,
     }
 )
+end
 
 -- Lava immunity
+if ModSettingGet("immunity_perks.protection_lava") then
 table.insert(perk_list,
     {
         id = "PROTECTION_LAVA",
@@ -43,8 +46,10 @@ table.insert(perk_list,
         end,
     }
 )
+end
 
 -- Polymorph immunity
+if ModSettingGet("immunity_perks.protection_polymorph") then
 table.insert(perk_list,
     {
         id = "PROTECTION_POLYMORPH",
@@ -64,3 +69,4 @@ table.insert(perk_list,
         end,
     }
 )
+end
