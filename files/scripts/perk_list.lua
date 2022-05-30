@@ -92,4 +92,32 @@ if ModSettingGet("immunity_perks.protection_freeze") then
             end,
         }
     )
-    end
+end
+
+-- Slice immunity
+if ModSettingGet("immunity_perks.protection_slice") then
+    local entityTag = "protection_slice"
+    table.insert(perk_list,
+        {
+            id = "PROTECTION_SLICE",
+            ui_name = "$perk_protection_slice",
+            ui_description = "$perkdesc_protection_slice",
+            ui_icon = "data/ui_gfx/perk_icons/protection_slice.png",
+            perk_icon = "data/items_gfx/perks/protection_slice.png",
+            -- game_effect = "PROTECTION_SLICE",
+            stackable = STACKABLE_NO,
+            usable_by_enemies = true,
+            not_in_default_perk_pool = false,
+            func = function( entity_perk_item, entity_who_picked, item_name )
+                local damageModel = EntityGetFirstComponent( entity_who_picked, "DamageModelComponent" )
+                ComponentObjectSetValue2( damageModel, "damage_multipliers", "slice", 0 )
+                EntityAddTag( entity_who_picked, entityTag )
+            end,
+            func_remove = function( entity_who_picked )
+                local damageModel = EntityGetFirstComponent( entity_who_picked, "DamageModelComponent" )
+                ComponentObjectSetValue2( damageModel, "damage_multipliers", "slice", 1 )
+                EntityRemoveTag( entity_who_picked, entityTag )
+            end,
+        }
+    )
+end

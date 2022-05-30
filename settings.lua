@@ -35,6 +35,13 @@ mod_settings =
 				ui_description = "You are immune to freeze",
 				value_default = true,
 				scope = MOD_SETTING_SCOPE_RUNTIME_RESTART,
+			},
+			{
+				id = "protection_slice",
+				ui_name = "Slice Immunity",
+				ui_description = "You are immune to slice damage",
+				value_default = true,
+				scope = MOD_SETTING_SCOPE_RUNTIME_RESTART,
 			}
 		}
 	}

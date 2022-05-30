@@ -6,4 +6,6 @@ perk_protection_polymorph,Polymorph Immunity,Иммунитет к полимо�
 perkdesc_protection_polymorph,You are immune to polymorph,Вы получаете иммунитет к полиморфизму,,,,,,,,,,,,
 perk_protection_freeze,Freeze Immunity,Иммунитет к заморозке,,,,,,,,,,,,
 perkdesc_protection_freeze,You are immune to freeze,Вы получаете иммунитет к заморозке,,,,,,,,,,,,
+perk_protection_slice,Slice Immunity,Иммунитет к разрезанию,,,,,,,,,,,,
+perkdesc_protection_slice,You are immune to slice damage,Вы получаете иммунитет к урону разрезанием от различных пил,,,,,,,,,,,,
 immunity_perks_settings_ui_name,"Remove unnecessary perks! If you already have perks from the list,\n disabling them may cause problems, it is recommended to get rid of them \nor start a new game.","Отключайте ненужные перки! Если у вас уже есть перки из списка,\n при их отключении могут возникнуть проблемы,\n рекомендуется избавиться от них или начать новую игру.",,,,,,,,,,,,
