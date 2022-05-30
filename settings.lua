@@ -1,9 +1,5 @@
 dofile("data/scripts/lib/mod_settings.lua")
 
-function mod_setting_change_callback( mod_id, gui, in_main_menu, setting, old_value, new_value  )
-	print( tostring(new_value), setting.id:upper() )
-end
-
 local mod_id = "immunity_perks" -- This should match the name of your mod's folder.
 mod_settings_version = 1 -- This is a magic global that can be used to migrate settings to new mod versions. call mod_settings_get_version() before mod_settings_update() to get the old value. 
 mod_settings = 
@@ -14,27 +10,24 @@ mod_settings =
 		settings = {
 			{
 				id = "protection_acid",
-				ui_name = "$perk_protection_acid",
-				ui_description = "$perkdesc_protection_acid",
+				ui_name = "Acid Immunity",
+				ui_description = "You take no damage from acid",
 				value_default = true,
 				scope = MOD_SETTING_SCOPE_RUNTIME_RESTART,
-				change_fn = mod_setting_change_callback,
 			},
 			{
 				id = "protection_lava",
-				ui_name = "$perk_protection_lava",
-				ui_description = "$perkdesc_protection_lava",
+				ui_name = "Lava Immunity",
+				ui_description = "You take no contact damage from lava but still flammable",
 				value_default = true,
 				scope = MOD_SETTING_SCOPE_RUNTIME_RESTART,
-				change_fn = mod_setting_change_callback,
 			},
 			{
 				id = "protection_polymorph",
-				ui_name = "$perk_protection_polymorph",
-				ui_description = "$perkdesc_protection_polymorph",
+				ui_name = "Polymorph Immunity",
+				ui_description = "You are immune to polymorph",
 				value_default = true,
 				scope = MOD_SETTING_SCOPE_RUNTIME_RESTART,
-				change_fn = mod_setting_change_callback,
 			}
 		}
 	}
