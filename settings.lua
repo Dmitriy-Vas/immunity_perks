@@ -28,6 +28,13 @@ mod_settings =
 				ui_description = "You are immune to polymorph",
 				value_default = true,
 				scope = MOD_SETTING_SCOPE_RUNTIME_RESTART,
+			},
+			{
+				id = "protection_freeze",
+				ui_name = "Freeze Immunity",
+				ui_description = "You are immune to freeze",
+				value_default = true,
+				scope = MOD_SETTING_SCOPE_RUNTIME_RESTART,
 			}
 		}
 	}

@@ -70,3 +70,26 @@ table.insert(perk_list,
     }
 )
 end
+
+-- Freeze immunity
+if ModSettingGet("immunity_perks.protection_freeze") then
+    table.insert(perk_list,
+        {
+            id = "PROTECTION_FREEZE",
+            ui_name = "$perk_protection_freeze",
+            ui_description = "$perkdesc_protection_freeze",
+            ui_icon = "data/ui_gfx/perk_icons/protection_freeze.png",
+            perk_icon = "data/items_gfx/perks/protection_freeze.png",
+            game_effect = "PROTECTION_FREEZE",
+            stackable = STACKABLE_NO,
+            usable_by_enemies = true,
+            not_in_default_perk_pool = false,
+            func = function( entity_perk_item, entity_who_picked, item_name )
+    
+            end,
+            func_remove = function( entity_who_picked )
+                
+            end,
+        }
+    )
+    end
