@@ -23,6 +23,13 @@ mod_settings =
 				scope = MOD_SETTING_SCOPE_RUNTIME_RESTART,
 			},
 			{
+				id = "protection_poison",
+				ui_name = "Poison Immunity",
+				ui_description = "You take no damage from poison",
+				value_default = true,
+				scope = MOD_SETTING_SCOPE_RUNTIME_RESTART,
+			},
+			{
 				id = "protection_polymorph",
 				ui_name = "Polymorph Immunity",
 				ui_description = "You are immune to polymorph",

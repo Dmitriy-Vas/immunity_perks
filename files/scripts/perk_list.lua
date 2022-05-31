@@ -48,6 +48,35 @@ table.insert(perk_list,
 )
 end
 
+-- Poison immunity
+if ModSettingGet("immunity_perks.protection_poison") then
+    table.insert(perk_list,
+        {
+            id = "PROTECTION_POISON",
+            ui_name = "$perk_protection_poison",
+            ui_description = "$perkdesc_protection_poison",
+            ui_icon = "data/ui_gfx/perk_icons/protection_poison.png",
+            perk_icon = "data/items_gfx/perks/protection_poison.png",
+            -- game_effect = "PROTECTION_POISON",
+            stackable = STACKABLE_NO,
+            usable_by_enemies = true,
+            not_in_default_perk_pool = false,
+            func = function( entity_perk_item, entity_who_picked, item_name )
+                EntitySetDamageFromMaterial( entity_who_picked, "poison", 0 )
+                EntitySetDamageFromMaterial( entity_who_picked, "rock_static_poison", 0 )
+                local damageModel = EntityGetFirstComponent( entity_who_picked, "DamageModelComponent" )
+                ComponentObjectSetValue2( damageModel, "damage_multipliers", "poison", 0 )
+            end,
+            func_remove = function( entity_who_picked )
+                EntitySetDamageFromMaterial( entity_who_picked, "poison", 0.001 )
+                EntitySetDamageFromMaterial( entity_who_picked, "rock_static_poison", 0.001 )
+                local damageModel = EntityGetFirstComponent( entity_who_picked, "DamageModelComponent" )
+                ComponentObjectSetValue2( damageModel, "damage_multipliers", "poison", 1 )
+            end,
+        }
+    )
+end
+
 -- Polymorph immunity
 if ModSettingGet("immunity_perks.protection_polymorph") then
 table.insert(perk_list,
