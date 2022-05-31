@@ -14,5 +14,5 @@ for i, file in ipairs( files ) do
 	local xml = nxml.parse(content)
 	local projectile = xml:first_of("ProjectileComponent")
     projectile.attr.dont_collide_with_tag = "protection_slice"
-    ModTextFileSetContent( path, nxml.tostring(xml))
+    ModTextFileSetContent( path, nxml.tostring(xml) )
 end
